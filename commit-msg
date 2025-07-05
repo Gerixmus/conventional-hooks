@@ -4,7 +4,7 @@ types="fix|feat|chore|docs|style|refactor|perf|test|improvement"
 commit_msg_file=$1
 commit_msg=$(head -n 1 "$commit_msg_file")
 
-pattern="^(($types))(\([a-zA-Z0-9_-]+\))?: .+"
+pattern="^($types)(\([a-zA-Z0-9_-]+\))?!?: .+"
 
 if ! echo "$commit_msg" | grep -Eq "$pattern"; then
     echo "Invalid commit message format."
